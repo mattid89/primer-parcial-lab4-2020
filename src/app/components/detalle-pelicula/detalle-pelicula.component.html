@@ -1,0 +1,9 @@
+
+<div *ngIf="pelicula" class="card" style="width: 18rem;">
+    <img [src]="pelicula.foto" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{pelicula.nombre | uppercase}}</h5>
+      <p class="card-text">{{pelicula.tipo |titlecase}} - {{pelicula.fecha_estreno | date}} - {{pelicula.cantidad_publico}} Personas</p>
+      <div  class="btn btn-primary">No hace nada...</div>
+    </div>
+</div>

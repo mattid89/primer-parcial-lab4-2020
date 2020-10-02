@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Búsqueda</span>
+  </nav>
+
+  <div class="box margin-top-20">
+    <app-tabla-peliculas (mostrar)="mostrarDetalle($event)" ></app-tabla-peliculas>
+    <app-detalle-pelicula [pelicula]="unaPelicula" ></app-detalle-pelicula>
+  </div>
