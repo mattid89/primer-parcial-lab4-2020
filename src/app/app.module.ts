@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { TablaPeliculasComponent } from './components/tabla-peliculas/tabla-peliculas.component';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
+import { TablaActoresComponent } from './components/tabla-actores/tabla-actores.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
     PeliculaListadoComponent,
     ActorListadoComponent,
     TablaPeliculasComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    TablaActoresComponent
   ],
   imports: [
     BrowserModule,

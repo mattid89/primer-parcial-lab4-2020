@@ -1,0 +1,24 @@
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Nacimiento</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let actor of listadoActores" (click)="seleccionarActor(actor)" class="clickleable-row">
+        <th scope="row">{{actor.id}}</th>
+        <td>{{actor.nombre | titlecase}}</td>
+        <td>{{actor.apellido | titlecase}}</td>
+        <td>{{actor.sexo | titlecase}}</td>
+        <td>{{actor.fecha_nac | date}}</td>
+        <td><img [src]="actor.foto" alt="..." class="img-thumbnail"></td>
+      </tr>
+     
+    </tbody>
+  </table>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Actor } from '../models/actor.model';
 import { Pelicula } from '../models/pelicula.model';
 
 
@@ -8,14 +9,9 @@ import { Pelicula } from '../models/pelicula.model';
 })
 export class FirebaseService {
 
-  constructor(private db: AngularFirestore) {
-    const peliculas = db.collection('peliculas').valueChanges();
-    peliculas.subscribe(
-      (res) => console.log,
-      (err) => console.error
-    );
-  }
+  constructor(private db: AngularFirestore) { }
 
+    // PELICULAS
 
     public createPelicula(pelicula: Pelicula) {
       return this.db.collection('peliculas').doc(pelicula.id).set({...pelicula});
@@ -31,5 +27,23 @@ export class FirebaseService {
 
     public updatePelicula(documentId: string, pelicula: Pelicula) {
       return this.db.collection('peliculas').doc(documentId).set(pelicula);
+    }
+
+    // ACTORES
+
+    public createActor(actor: Actor) {
+      return this.db.collection('actores').doc(actor.id).set({...actor});
+    }
+
+    public getActor(documentId: string) {
+      return this.db.collection('actores').doc(documentId).get();
+    }
+
+    public getActores() {
+      return this.db.collection('actores').get();
+    }
+
+    public updateActor(documentId: string, actor: Actor) {
+      return this.db.collection('actores').doc(documentId).set({...actor});
     }
 }

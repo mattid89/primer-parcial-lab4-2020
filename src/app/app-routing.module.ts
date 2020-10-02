@@ -9,14 +9,14 @@ import { PeliculaListadoComponent } from './components/pelicula-listado/pelicula
 
 
 const routes: Routes = [
-  { path: 'bienvenido', component: BienvenidoComponent },
   { path: 'busqueda', component: BusquedaComponent },
+  { path: 'bienvenido', component: BienvenidoComponent },
   { path: 'peliculas/alta', component: PeliculaAltaComponent },
   { path: 'actor/alta', component: ActorAltaComponent },
   { path: 'actor/listado', component: ActorListadoComponent },
   { path: 'peliculas/listado', component: PeliculaListadoComponent },
-  { path: '',   redirectTo: '/bienvenido', pathMatch: 'full' },
-  { path: '**', component: BienvenidoComponent },
+  { path: '',   redirectTo: '/busqueda', pathMatch: 'full' },
+  { path: '**', component: BusquedaComponent },
 ];
 
 @NgModule({

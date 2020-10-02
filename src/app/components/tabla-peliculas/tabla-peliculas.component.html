@@ -13,10 +13,10 @@
 
       <tr *ngFor="let peli of listadoPeliculas" (click)="mostrarDetalle(peli)" class="clickleable-row">
         <th scope="row">{{peli.id}}</th>
-        <td>{{peli.nombre}}</td>
-        <td>{{peli.tipo}}</td>
-        <td>{{peli.fecha_estreno}}</td>
-        <td>{{peli.cantidad_publico}}</td>
+        <td>{{peli.nombre | titlecase}}</td>
+        <td>{{peli.tipo | titlecase}}</td>
+        <td>{{peli.fecha_estreno | date}}</td>
+        <td>{{peli.cantidad_publico | number}}</td>
         <td><img [src]="peli.foto" alt="..." class="img-thumbnail"></td>
       </tr>
      
