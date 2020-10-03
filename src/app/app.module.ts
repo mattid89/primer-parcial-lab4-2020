@@ -17,6 +17,7 @@ import { environment } from 'src/environments/environment';
 import { TablaPeliculasComponent } from './components/tabla-peliculas/tabla-peliculas.component';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 import { TablaActoresComponent } from './components/tabla-actores/tabla-actores.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { TablaActoresComponent } from './components/tabla-actores/tabla-actores.
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
+    AngularFireStorageModule, // storage
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

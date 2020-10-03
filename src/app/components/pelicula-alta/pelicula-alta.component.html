@@ -1,8 +1,58 @@
 <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Alta Películas</span>
-  </nav>
+  <span class="navbar-brand mb-0 h1">Alta Películas</span>
+</nav>
 
-  <div class="box margin-top-20">
-    <div class="form"></div>
-    <app-tabla-actores (seleccionar)="seleccionar($event)" ></app-tabla-actores>
+<div class="box margin-top-20">
+  <div class="form">
+    <form [formGroup]="peliculaForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="id"  placeholder="#id" formControlName="id" required>
+        <small id="nombreHelp" class="form-text text-muted">Cualquier valor alfanumérico.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre"  placeholder="Nombre" formControlName="nombre" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Género</label>
+        <select class="form-control" id="tipo" formControlName="tipo" required>
+          <option value="romance">Romance</option>
+          <option value="accion">Acción</option>
+          <option value="drama">Drama</option>
+          <option value="ficcion">Ciencia Ficción</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha_estreno">Estreno</label>
+        <input type="date" class="form-control" id="fecha_estreno"  placeholder="Estreno" formControlName="fecha_estreno" required>
+        <small id="nombreHelp" class="form-text text-muted">El formato es mm/dd/yyyy</small>
+      </div>
+
+      <div class="form-group">
+        <label for="cantidad_publico">Cantidad público</label>
+        <input type="number" class="form-control" id="cantidad_publico"  placeholder="cant. público" formControlName="cantidad_publico">
+      </div>
+
+      <p style="color: red;">Seleccione un actor de la lista haciendo click en alguno de los items...</p>
+
+
+      <button type="submit" class="btn btn-primary">Guardar</button>
+
+
+    </form>
+    <br>
+    <div class="form-group">
+      <label for="actores">Cantidad Actores Seleccionados</label>
+      <input type="number" class="form-control" id="actores" [(ngModel)]="cant_actores" disabled>
+    </div>
   </div>
+  <app-tabla-actores (seleccionar)="seleccionar($event)"></app-tabla-actores>
+</div>
+
+<div class="alert alert-primary" role="alert">
+  A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>

@@ -1,3 +1,5 @@
+import { Actor } from './actor.model';
+
 export class Pelicula {
 
     constructor(
@@ -7,5 +9,6 @@ export class Pelicula {
         public fecha_estreno: string,
         public cantidad_publico: number,
         public foto: string,
+        public actores: Actor[]
     ){}
 }
