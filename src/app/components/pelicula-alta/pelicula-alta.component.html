@@ -34,25 +34,17 @@
 
       <div class="form-group">
         <label for="cantidad_publico">Cantidad público</label>
-        <input type="number" class="form-control" id="cantidad_publico"  placeholder="cant. público" formControlName="cantidad_publico">
+        <input type="number" class="form-control" id="cantidad_publico"  placeholder="cant. público" formControlName="cantidad_publico" required>
       </div>
-
-      <p style="color: red;">Seleccione un actor de la lista haciendo click en alguno de los items...</p>
-
-
-      <button type="submit" class="btn btn-primary">Guardar</button>
-
-
+      
+      <div class="form-group">
+        <small style="color: red;">Seleccione un actor de la lista haciendo click en alguno de los items...</small>
+        <p for="actores">Cantidad Actores Seleccionados: {{actoresDeLaPeli.length | number}}</p>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Guardar</button><br>
+      <small *ngIf="(peliculaForm.invalid && submitted) || (actoresDeLaPeli.length === 0 && submitted)" style="color: red;"><strong>Cargue correctamente todos los campos. Mínimo un actor.</strong></small>
     </form>
-    <br>
-    <div class="form-group">
-      <label for="actores">Cantidad Actores Seleccionados</label>
-      <input type="number" class="form-control" id="actores" [(ngModel)]="cant_actores" disabled>
-    </div>
   </div>
   <app-tabla-actores (seleccionar)="seleccionar($event)"></app-tabla-actores>
-</div>
-
-<div class="alert alert-primary" role="alert">
-  A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
 </div>
