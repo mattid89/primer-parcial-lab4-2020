@@ -18,6 +18,7 @@ import { TablaPeliculasComponent } from './components/tabla-peliculas/tabla-peli
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 import { TablaActoresComponent } from './components/tabla-actores/tabla-actores.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ActorListadoComponent,
     TablaPeliculasComponent,
     DetallePeliculaComponent,
-    TablaActoresComponent
+    TablaActoresComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -22,11 +22,16 @@ export class FirebaseService {
     }
 
     public getPeliculas() {
-      return this.db.collection('peliculas').get();
+      // return this.db.collection('peliculas').get();
+      return this.db.collection('peliculas').snapshotChanges();
     }
 
     public updatePelicula(documentId: string, pelicula: Pelicula) {
       return this.db.collection('peliculas').doc(documentId).set(pelicula);
+    }
+
+    public deletePelicula(documentId: string) {
+      return this.db.collection('peliculas').doc(documentId).delete();
     }
 
     // ACTORES

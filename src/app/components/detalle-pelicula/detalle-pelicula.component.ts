@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pelicula } from 'src/app/models/pelicula.model';
 
 @Component({
@@ -9,9 +9,15 @@ import { Pelicula } from 'src/app/models/pelicula.model';
 export class DetallePeliculaComponent implements OnInit {
 
   @Input() pelicula: Pelicula;
+  @Input() borrado: boolean;
+  @Output() borrarPelicula = new EventEmitter<Pelicula>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  borrar() {
+    this.borrarPelicula.emit(this.pelicula);
   }
   
 

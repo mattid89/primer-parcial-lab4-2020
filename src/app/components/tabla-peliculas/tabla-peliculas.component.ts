@@ -19,13 +19,15 @@ export class TablaPeliculasComponent implements OnInit {
 
   getPeliculas() {
     this.firebaseService.getPeliculas()
-    .subscribe((actoresSnapshot) => {
-      actoresSnapshot.forEach( doc => this.listadoPeliculas.push(<Pelicula>doc.data()) );
+    .subscribe((peliculasSnapshot) => {
+      const listaNueva: Pelicula[] = [];
+      console.log('snapshot');
+      peliculasSnapshot.forEach( doc => listaNueva.push(<Pelicula>doc.payload.doc.data()) );
+      this.listadoPeliculas = listaNueva;
     });
   }
 
   mostrarDetalle(pelicula: Pelicula) {
-    console.log(pelicula);
     this.mostrar.emit(pelicula);
   }
 
