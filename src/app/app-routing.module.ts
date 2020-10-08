@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: 'actor/alta', component: ActorAltaComponent },
   { path: 'actor/listado', component: ActorListadoComponent },
   { path: 'peliculas/listado', component: PeliculaListadoComponent },
-  { path: '',   redirectTo: '/busqueda', pathMatch: 'full' },
-  { path: '**', component: BusquedaComponent },
+  { path: '',   redirectTo: '/actor/alta', pathMatch: 'full' },
+  { path: '**', component: ActorAltaComponent },
 ];
 
 @NgModule({

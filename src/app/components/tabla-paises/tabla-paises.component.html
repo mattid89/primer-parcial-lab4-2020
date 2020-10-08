@@ -1,0 +1,18 @@
+<div class="margin">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{titulo}}</mat-card-title>
+        </mat-card-header>
+        <mat-list role="list">
+        <cdk-virtual-scroll-viewport itemSize="paises.length" class="example-viewport">
+                <mat-list-item *cdkVirtualFor="let pais of paises" role="listitem">
+                    <span class="pointer" (click)="seleccionar(pais)">
+                        {{pais.name}} - {{pais.region}} <img [src]="pais.flag" width="30px">
+                    </span>
+                    <!-- <app-boton-entidad *ngIf="siNoBorra" (borro)="eliminar($event)" [pais]="pais"></app-boton-entidad> -->
+                </mat-list-item>
+            </cdk-virtual-scroll-viewport>
+        </mat-list>
+    </mat-card>
+
+</div>

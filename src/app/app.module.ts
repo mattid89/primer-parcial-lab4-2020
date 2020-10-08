@@ -19,6 +19,15 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
 import { TablaActoresComponent } from './components/tabla-actores/tabla-actores.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
+
+// Material
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +41,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TablaPeliculasComponent,
     DetallePeliculaComponent,
     TablaActoresComponent,
-    NavbarComponent
+    NavbarComponent,
+    TablaPaisesComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +53,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AngularFireStorageModule, // storage
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+
+    MatCardModule,
+    MatListModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

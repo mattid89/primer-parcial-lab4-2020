@@ -1,1 +1,47 @@
-<p>actor-alta works!</p>
+<app-navbar [titulo]="'Alta Actores'"></app-navbar>
+
+  <div class="box margin-top-20">
+    <div class="form">
+        <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+    
+          <div class="form-group">
+            <input type="text" class="form-control" id="id"  placeholder="#id" formControlName="id" required>
+            <small id="nombreHelp" class="form-text text-muted">Cualquier valor alfanumérico.</small>
+          </div>
+    
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre"  placeholder="Nombre" formControlName="nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido"  placeholder="Apellido" formControlName="apellido" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="tipo">Sexo</label>
+            <select class="form-control" id="sexo" formControlName="sexo" required>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="fecha_nac">Nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nac"  placeholder="Nacimiento" formControlName="fecha_nac" required>
+            <small id="nombreHelp" class="form-text text-muted">El formato es mm/dd/yyyy</small>
+          </div>
+    
+          <div class="form-group">
+            <small style="color: red;">Seleccione un país de la lista haciendo click en alguno de los items...</small>
+            <p for="actores">Cantidad Actores Seleccionados: {{nacionalidad || 'Aún no ha seleccionado'}}</p>
+          </div>
+        
+          
+          <button type="submit" class="btn btn-primary">Guardar</button><br>
+          <small *ngIf="(actorForm.invalid && submitted) || (!nacionalidad && submitted)" style="color: red;"><strong>Cargue correctamente todos los campos. Seleccione el País.</strong></small>
+        </form>
+      </div>
+    <app-tabla-paises (seleccion)="seleccionarPais($event)"></app-tabla-paises>
+  </div>
