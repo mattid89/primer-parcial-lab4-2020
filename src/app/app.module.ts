@@ -26,6 +26,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -58,6 +59,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatCardModule,
     MatListModule,
     ScrollingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
