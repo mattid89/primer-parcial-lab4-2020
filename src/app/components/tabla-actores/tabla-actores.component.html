@@ -6,6 +6,7 @@
         <th scope="col">Apellido</th>
         <th scope="col">Sexo</th>
         <th scope="col">Nacimiento</th>
+        <th scope="col">Nacionalidad</th>
         <th scope="col">Imagen</th>
       </tr>
     </thead>
@@ -17,6 +18,7 @@
         <td>{{actor.apellido | titlecase}}</td>
         <td>{{actor.sexo | titlecase}}</td>
         <td>{{actor.fecha_nac | date}}</td>
+        <td>{{actor.nac | titlecase}}</td>
         <td><img [src]="actor.foto" alt="..." class="img-thumbnail"></td>
       </tr>
      

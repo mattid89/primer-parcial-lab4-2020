@@ -5,8 +5,9 @@
         <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
     
           <div class="form-group">
+            <label for="nombre">#Id</label>
             <input type="text" class="form-control" id="id"  placeholder="#id" formControlName="id" required>
-            <small id="nombreHelp" class="form-text text-muted">Cualquier valor alfanumérico.</small>
+            <small id="nombreHelp" class="form-text text-muted">Ingrese cualquier valor alfanumérico.</small>
           </div>
     
           <div class="form-group">
@@ -35,7 +36,7 @@
     
           <div class="form-group">
             <small style="color: red;">Seleccione un país de la lista haciendo click en alguno de los items...</small>
-            <p for="actores">Cantidad Actores Seleccionados: {{nacionalidad || 'Aún no ha seleccionado'}}</p>
+            <p for="actores">País seleccionado: {{nacionalidad || 'Aún no ha seleccionado'}}</p>
           </div>
         
           

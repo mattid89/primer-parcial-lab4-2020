@@ -1,2 +1,8 @@
 <app-navbar [titulo]="'Listado Actores'"></app-navbar>
-<app-tabla-actores></app-tabla-actores>
+<app-tabla-actores (seleccionar)="mostrarActor($event)"></app-tabla-actores>
+
+<div class="box">
+    <app-boton-borrar (seBorro)="seBorro($event)" *ngIf="actorSeleccionado" [actor]="actorSeleccionado"></app-boton-borrar>
+    <app-detalle-actor *ngIf="actorSeleccionado" [actor]="actorSeleccionado"></app-detalle-actor>
+    <app-modificar-actor *ngIf="actorSeleccionado" [actor]="actorSeleccionado"></app-modificar-actor>
+</div>

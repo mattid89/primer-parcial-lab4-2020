@@ -27,6 +27,10 @@ import {MatListModule} from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BotonBorrarComponent } from './components/actor-listado/boton-borrar/boton-borrar.component';
+import { DetalleActorComponent } from './components/actor-listado/detalle-actor/detalle-actor.component';
+import { ModificarActorComponent } from './components/actor-listado/modificar-actor/modificar-actor.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -43,7 +47,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DetallePeliculaComponent,
     TablaActoresComponent,
     NavbarComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    BotonBorrarComponent,
+    DetalleActorComponent,
+    ModificarActorComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +67,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatListModule,
     ScrollingModule,
     BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

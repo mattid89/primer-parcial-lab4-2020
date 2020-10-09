@@ -20,7 +20,9 @@ export class TablaActoresComponent implements OnInit {
   getActores() {
     this.firebaseService.getActores()
     .subscribe((actoresSnapshot) => {
-      actoresSnapshot.forEach( doc => this.listadoActores.push(<Actor>doc.data()) );
+      const listaNueva: Actor[] = [];
+      actoresSnapshot.forEach( doc => listaNueva.push(<Actor>doc.payload.doc.data()) );
+      this.listadoActores = listaNueva;
     });
   }
 

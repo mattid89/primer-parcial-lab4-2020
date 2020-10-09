@@ -45,10 +45,15 @@ export class FirebaseService {
     }
 
     public getActores() {
-      return this.db.collection('actores').get();
+      // return this.db.collection('actores').get();
+      return this.db.collection('actores').snapshotChanges();
     }
 
     public updateActor(documentId: string, actor: Actor) {
       return this.db.collection('actores').doc(documentId).set({...actor});
+    }
+
+    public deleteActor(documentId: string) {
+      return this.db.collection('actores').doc(documentId).delete();
     }
 }
