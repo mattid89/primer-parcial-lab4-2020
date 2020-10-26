@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Run the docker build for Prod
+
+docker build -t primer-parcial:prod .
+
+## or for Dev
+
+docker build -t primer-parcial:dev --build-arg configuration="" .
+
+## or any other environment
+
+docker build -t primer-parcial:dev --build-arg configuration="staging" .
+
+## and for run...
+
+docker run -p 80:80 primer-parcial:prod
